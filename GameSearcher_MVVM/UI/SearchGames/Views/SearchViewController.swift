@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     
     private var games: [GameItemViewModel] { viewModel.items.value }
+    
     private var viewModel: GamesListViewModel!
     
     static func create(with viewModel: GamesListViewModel) -> SearchViewController {
@@ -28,8 +29,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewSetup()
-        viewModel = DefaultGamesListViewModel()
+        viewSetup()
         viewModel.viewDidLoad()
         bind(to: viewModel)
         setupSearchBar()
@@ -81,7 +81,8 @@ class SearchViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
     }
     
-    private func tableViewSetup() {
+    private func viewSetup() {
+        title = viewModel.screenTitle
         tableView.registerCell(GameCell.self)
         addLazyLoading()
     }
@@ -118,11 +119,16 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        games.count
+        displayPlaceholderIfNeeded()
+        return games.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.cell(GameCell.self).setupGameInfo(with: games[indexPath.row])
+    }
+    
+    private func displayPlaceholderIfNeeded() {
+        tableView.backgroundView = viewModel.isEmpty ? EmptyView() : nil
     }
 }
 
@@ -132,9 +138,7 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let details = GameDetailsController.instantiate("GameDetails")
-        details.game = games[indexPath.row]
-        push(details)
+        viewModel.didSelectItem(at: indexPath.row)
     }
 }
 

@@ -75,6 +75,12 @@
 		A3EDD8B02629B1CC002160E2 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD86C2629B1CC002160E2 /* Alertable.swift */; };
 		A3EDD8B12629B1CC002160E2 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD86D2629B1CC002160E2 /* StoryboardInstantiable.swift */; };
 		A3EDD8B22629B1CC002160E2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD86E2629B1CC002160E2 /* LoadingView.swift */; };
+		A3EDD91E2629D50B002160E2 /* SearchGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD91D2629D50B002160E2 /* SearchGameCoordinator.swift */; };
+		A3EDD9222629D74D002160E2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD9212629D74D002160E2 /* MainCoordinator.swift */; };
+		A3EDD9272629D81D002160E2 /* SearchGameDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD9262629D81D002160E2 /* SearchGameDIContainer.swift */; };
+		A3EDD92B2629D9BD002160E2 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD92A2629D9BD002160E2 /* AppDIContainer.swift */; };
+		A3EDD9322629E371002160E2 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD9312629E371002160E2 /* EmptyView.swift */; };
+		A3EDD9372629E3E1002160E2 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3EDD9362629E3E1002160E2 /* EmptyView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +155,12 @@
 		A3EDD86C2629B1CC002160E2 /* Alertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		A3EDD86D2629B1CC002160E2 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		A3EDD86E2629B1CC002160E2 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A3EDD91D2629D50B002160E2 /* SearchGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGameCoordinator.swift; sourceTree = "<group>"; };
+		A3EDD9212629D74D002160E2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		A3EDD9262629D81D002160E2 /* SearchGameDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGameDIContainer.swift; sourceTree = "<group>"; };
+		A3EDD92A2629D9BD002160E2 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		A3EDD9312629E371002160E2 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		A3EDD9362629E3E1002160E2 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
 		F3C488939A0664C954BFA214 /* Pods-GameSearcher_MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameSearcher_MVVM.release.xcconfig"; path = "Target Support Files/Pods-GameSearcher_MVVM/Pods-GameSearcher_MVVM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,9 +214,9 @@
 		A3EDD7F22629B19F002160E2 /* GameSearcher_MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				A3EDD9242629D807002160E2 /* Application */,
+				A3EDD91C2629D4F8002160E2 /* Coordinator */,
 				A3EDD8012629B1A0002160E2 /* Info.plist */,
-				A3EDD80E2629B1CC002160E2 /* AppDelegate.swift */,
-				A3EDD8372629B1CC002160E2 /* StaticData.swift */,
 				A3EDD80F2629B1CC002160E2 /* Domain */,
 				A3EDD8332629B1CC002160E2 /* Networking */,
 				A3EDD8192629B1CC002160E2 /* Realm */,
@@ -287,6 +299,7 @@
 		A3EDD8242629B1CC002160E2 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A3EDD9342629E3D7002160E2 /* EmptyView */,
 				A3EDD8252629B1CC002160E2 /* TwoStateButton.swift */,
 				A3EDD8262629B1CC002160E2 /* NavigationBarConfigurator.swift */,
 				A3EDD8272629B1CC002160E2 /* VideoPlayer */,
@@ -530,6 +543,43 @@
 			path = Testing;
 			sourceTree = "<group>";
 		};
+		A3EDD91C2629D4F8002160E2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A3EDD91D2629D50B002160E2 /* SearchGameCoordinator.swift */,
+				A3EDD9212629D74D002160E2 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A3EDD9242629D807002160E2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A3EDD8372629B1CC002160E2 /* StaticData.swift */,
+				A3EDD80E2629B1CC002160E2 /* AppDelegate.swift */,
+				A3EDD9252629D80D002160E2 /* DIContainer */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A3EDD9252629D80D002160E2 /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				A3EDD9262629D81D002160E2 /* SearchGameDIContainer.swift */,
+				A3EDD92A2629D9BD002160E2 /* AppDIContainer.swift */,
+			);
+			path = DIContainer;
+			sourceTree = "<group>";
+		};
+		A3EDD9342629E3D7002160E2 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				A3EDD9312629E371002160E2 /* EmptyView.swift */,
+				A3EDD9362629E3E1002160E2 /* EmptyView.xib */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -594,6 +644,7 @@
 				A3EDD89F2629B1CC002160E2 /* DescriptionCell.xib in Resources */,
 				A3EDD86F2629B1CC002160E2 /* Assets.xcassets in Resources */,
 				A3EDD87A2629B1CC002160E2 /* Screenshots (1).png in Resources */,
+				A3EDD9372629E3E1002160E2 /* EmptyView.xib in Resources */,
 				A3EDD8922629B1CC002160E2 /* TestTableViewCell.xib in Resources */,
 				A3EDD87D2629B1CC002160E2 /* 2.png in Resources */,
 				A3EDD8932629B1CC002160E2 /* Main.storyboard in Resources */,
@@ -674,7 +725,9 @@
 				A3EDD8892629B1CC002160E2 /* Screenshot.swift in Sources */,
 				A3EDD89D2629B1CC002160E2 /* HeaderView.swift in Sources */,
 				A3EDD88D2629B1CC002160E2 /* APIService.swift in Sources */,
+				A3EDD9222629D74D002160E2 /* MainCoordinator.swift in Sources */,
 				A3EDD88F2629B1CC002160E2 /* StaticData.swift in Sources */,
+				A3EDD9272629D81D002160E2 /* SearchGameDIContainer.swift in Sources */,
 				A3EDD8A32629B1CC002160E2 /* GameDetailsController.swift in Sources */,
 				A3EDD8802629B1CC002160E2 /* TwoStateButton.swift in Sources */,
 				A3EDD8902629B1CC002160E2 /* GamesListViewModel.swift in Sources */,
@@ -692,6 +745,7 @@
 				A3EDD8782629B1CC002160E2 /* RealmService.swift in Sources */,
 				A3EDD8762629B1CC002160E2 /* PosterImagesRepository.swift in Sources */,
 				A3EDD8A62629B1CC002160E2 /* SimilarGamesCollectionFlowLayout.swift in Sources */,
+				A3EDD9322629E371002160E2 /* EmptyView.swift in Sources */,
 				A3EDD8942629B1CC002160E2 /* TestViewController.swift in Sources */,
 				A3EDD8842629B1CC002160E2 /* HUD.swift in Sources */,
 				A3EDD8AF2629B1CC002160E2 /* Observable.swift in Sources */,
@@ -701,11 +755,13 @@
 				A3EDD8722629B1CC002160E2 /* Cancelable.swift in Sources */,
 				A3EDD8AE2629B1CC002160E2 /* ScreenshotsCollectionViewDataSource.swift in Sources */,
 				A3EDD8752629B1CC002160E2 /* GamesRepository.swift in Sources */,
+				A3EDD91E2629D50B002160E2 /* SearchGameCoordinator.swift in Sources */,
 				A3EDD8882629B1CC002160E2 /* Trailer.swift in Sources */,
 				A3EDD8A02629B1CC002160E2 /* DescriptionCell.swift in Sources */,
 				A3EDD8B12629B1CC002160E2 /* StoryboardInstantiable.swift in Sources */,
 				A3EDD8812629B1CC002160E2 /* NavigationBarConfigurator.swift in Sources */,
 				A3EDD88E2629B1CC002160E2 /* APIRouter.swift in Sources */,
+				A3EDD92B2629D9BD002160E2 /* AppDIContainer.swift in Sources */,
 				A3EDD8792629B1CC002160E2 /* Models.xcdatamodeld in Sources */,
 				A3EDD8952629B1CC002160E2 /* GameItemViewModel.swift in Sources */,
 				A3EDD8982629B1CC002160E2 /* TestTableViewCell.swift in Sources */,

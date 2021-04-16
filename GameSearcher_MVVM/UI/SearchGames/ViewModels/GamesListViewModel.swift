@@ -42,7 +42,7 @@ protocol GamesListViewModelOutput {
 protocol GamesListViewModel: GamesListViewModelInput, GamesListViewModelOutput {}
 
 final class DefaultGamesListViewModel: GamesListViewModel {
-    
+        
     private var searhGamesUseCase: SearchGamesUseCase?
     private var actions: GamesListViewModelActions?
     
@@ -69,7 +69,9 @@ final class DefaultGamesListViewModel: GamesListViewModel {
     
     // MARK: - Init
     
-    init() { }
+    init(actions: GamesListViewModelActions) {
+        self.actions = actions
+    }
 
     //MARK: - Private
     
@@ -80,9 +82,6 @@ final class DefaultGamesListViewModel: GamesListViewModel {
     
     private func resetPages() {
         currentPage = 1
-  //      totalPageCount = 1
-    //    pages.removeAll()
-    //    items.value.removeAll()
     }
     
     private func handle(error: String) {
@@ -127,6 +126,11 @@ final class DefaultGamesListViewModel: GamesListViewModel {
     func viewDidLoad() { }
     
     func didRequestNextPage() {
+        guard !query.value.isEmpty else {
+            loading.value = .none
+            return
+        }
+        
         guard hasMorePages, loading.value == .none else {
             Log("No more pages")
             return

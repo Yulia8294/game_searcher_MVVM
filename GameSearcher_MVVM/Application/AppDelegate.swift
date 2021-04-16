@@ -12,12 +12,21 @@ import Swiftools
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    let appDIContainer = AppDIContainer()
+    var mainCordinator: MainCoordinator?
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         performRealmMigration()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let nav = UINavigationController()
+        window?.rootViewController = nav
+        mainCordinator = MainCoordinator(navigationController: nav, appDIContainer: appDIContainer)
+        
+        mainCordinator?.start()
+        window?.makeKeyAndVisible()
         
         return true
     }
