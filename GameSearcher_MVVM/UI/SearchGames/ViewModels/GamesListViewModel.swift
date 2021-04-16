@@ -85,8 +85,8 @@ final class DefaultGamesListViewModel: GamesListViewModel {
     //    items.value.removeAll()
     }
     
-    private func handle(error: Error) {
-        LogError("Failed loading games")
+    private func handle(error: String) {
+        LogError(error)
     }
     
     private func update(query: String) {
@@ -100,6 +100,13 @@ final class DefaultGamesListViewModel: GamesListViewModel {
         self.query.value = query
         
         APIService.fetchAllGames(page: currentPage, searchText: query) { error, games in
+            self.loading.value = .none
+
+            if let error = error {
+                self.handle(error: error)
+                return
+            }
+
             guard let games = games else { return }
             self.items.value = games.map { GameItemViewModel(game: $0)}
         }
@@ -120,12 +127,20 @@ final class DefaultGamesListViewModel: GamesListViewModel {
     func viewDidLoad() { }
     
     func didRequestNextPage() {
-        guard hasMorePages else {
+        guard hasMorePages, loading.value == .none else {
             Log("No more pages")
             return
         }
         
+        loading.value = .nextPage
         APIService.fetchAllGames(page: nextPage, searchText: query.value) { error, games in
+            self.loading.value = .none
+            
+            if let error = error {
+                self.handle(error: error)
+                return
+            }
+
             guard let games = games else {
                 self.hasMorePages = false
                 return

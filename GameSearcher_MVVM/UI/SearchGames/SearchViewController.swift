@@ -17,14 +17,8 @@ class SearchViewController: UIViewController {
     
     private let searchController = UISearchController(searchResultsController: nil)
     
-    private var games: [GameItemViewModel] {
-        viewModel.items.value
-    }
-    
+    private var games: [GameItemViewModel] { viewModel.items.value }
     private var viewModel: GamesListViewModel!
-    
-    private var finished = false
-    private var page     = 2
     
     static func create(with viewModel: GamesListViewModel) -> SearchViewController {
         let view = SearchViewController.instantiate()
@@ -34,11 +28,10 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableViewSetup()
         viewModel = DefaultGamesListViewModel()
         viewModel.viewDidLoad()
         bind(to: viewModel)
-
-        tableViewSetup()
         setupSearchBar()
     }
     
@@ -50,25 +43,27 @@ class SearchViewController: UIViewController {
     }
     
     private func showError(_ error: String) {
-        Log("SHOW ERROR")
-
         guard !error.isEmpty else { return }
         Log(error)
     }
     
     private func updateSearchQuery(_ query: String) {
-        Log("UPDATE SEARCH QUERY")
         searchController.searchBar.text = query
     }
     
     private func updateLoading(_ loading: MoviesListViewModelLoading?) {
-        Log("UPDATE LOADING")
+        HUD.hide()
+        tableView.infiniteScrollingView.stopAnimating()
 
+        switch loading {
+        case .fullScreen: HUD.show()
+        case .nextPage: tableView.infiniteScrollingView.startAnimating()
+        case .none:
+            Log("Loading set to NONE")
+        }
     }
     
     private func updateItems() {
-        Log("UPDATE ITEMS")
-
         tableView.reloadData()
     }
     
@@ -87,7 +82,6 @@ class SearchViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
     }
     
-    
     private func tableViewSetup() {
         tableView.registerCell(GameCell.self)
         addLazyLoading()
@@ -101,8 +95,6 @@ class SearchViewController: UIViewController {
     private func addLazyLoading() {
         tableView.addInfiniteScrolling {
             self.tableView.infiniteScrollingView.activityIndicatorViewStyle = .medium
-            
-            self.tableView.infiniteScrollingView.stopAnimating()
             self.viewModel.didRequestNextPage()
         }
     }
