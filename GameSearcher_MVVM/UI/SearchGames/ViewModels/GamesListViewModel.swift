@@ -90,8 +90,8 @@ final class DefaultGamesListViewModel: GamesListViewModel {
     }
     
     private func update(query: String) {
+        launchDelayedNetworkSearch(query)
         resetPages()
-        load(query: query, loading: .fullScreen)
     }
     
     private func load(query: String, loading: MoviesListViewModelLoading) {
@@ -105,6 +105,15 @@ final class DefaultGamesListViewModel: GamesListViewModel {
         }
     }
     
+    private var timer: Timer?
+    
+    private func launchDelayedNetworkSearch(_ query: String) {
+        timer?.invalidate()
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
+            self.load(query: query, loading: .fullScreen)
+        }
+    }
     
 //MARK: - Bindings
     
@@ -125,6 +134,8 @@ final class DefaultGamesListViewModel: GamesListViewModel {
         }
         
     }
+    
+    
     
     func didSearch(query: String) {
         guard !query.isEmpty else { return }
