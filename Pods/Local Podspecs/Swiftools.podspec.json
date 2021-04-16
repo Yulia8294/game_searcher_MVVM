@@ -1,0 +1,22 @@
+{
+  "name": "Swiftools",
+  "version": "1.0.2",
+  "summary": "A small library with swift tools.",
+  "description": "This is just a small library with swift tools.",
+  "homepage": "https://appcoda.com",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": "YuliaN",
+  "platforms": {
+    "ios": "11.0"
+  },
+  "source": {
+    "git": "https://github.com/Jiliann143/swiftools.git",
+    "tag": "1.0.2"
+  },
+  "source_files": "Sources/**/*.swift",
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
+}

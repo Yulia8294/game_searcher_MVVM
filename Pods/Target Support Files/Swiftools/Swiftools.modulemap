@@ -1,0 +1,6 @@
+framework module Swiftools {
+  umbrella header "Swiftools-umbrella.h"
+
+  export *
+  module * { export * }
+}
