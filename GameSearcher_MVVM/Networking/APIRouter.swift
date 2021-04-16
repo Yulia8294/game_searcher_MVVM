@@ -7,12 +7,14 @@
 //
 
 import Alamofire
+import Swiftools
 
 public enum APIRouter: URLRequestConvertible {
     
     enum Constants {
-        static let baseUrl = "https://api.rawg.io/api/games"
+        static let baseUrl = "https://api.rawg.io/api"
         static let headers = "TestGameApp"
+        static let APIKEY  = "37dab016729042a7a5b21a5d522d6e8c"
     }
     
     case searchGames(String, Int)
@@ -28,15 +30,15 @@ public enum APIRouter: URLRequestConvertible {
     var path: String {
         switch self {
         case .searchGames:
-            return "https://api.rawg.io/api/games?page_size=10&"
+            return "games"
         case .details(let id):
-            return "\(id)"
+            return "games/\(id)"
         case .screenshots(let name):
-            return "\(name)/screenshots"
+            return "games/\(name)/screenshots"
         case .similar(_ , let id):
-            return "\(id)/suggested"
+            return "games/\(id)/suggested"
         case .trailers(let id):
-            return "\(id)/movies"
+            return "games/\(id)/movies"
         }
     }
     
@@ -44,6 +46,7 @@ public enum APIRouter: URLRequestConvertible {
         switch self {
         case .searchGames(let text, let page):
             return [
+                    "page_size" : 10,
                     "search"   : text,
                     "page"     : page
                     ]
@@ -58,34 +61,17 @@ public enum APIRouter: URLRequestConvertible {
         }
     }
     
-    var encoding: URLEncoding {
-        switch self {
-        case .searchGames:
-            return URLEncoding.queryString
-        case .details:
-            return URLEncoding.default
-        case .screenshots:
-            return URLEncoding.default
-        case .similar:
-            return URLEncoding.queryString
-        case .trailers:
-            return URLEncoding.queryString
-        }
-    }
-    
     public func asURLRequest() throws -> URLRequest {
-        let url = try Constants.baseUrl.asURL()
-        var finalUrl = url.appendingPathComponent(path)
+        let url = try Constants.baseUrl.asURL().appendingPathComponent(path)
         
-        if path == "https://api.rawg.io/api/games?page_size=10&" {
-            finalUrl = try path.asURL()
-        }
+        var finalParams = parameters
+        finalParams["key"] = Constants.APIKEY
         
-        var request = URLRequest(url: finalUrl)
+        var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.addValue(Constants.headers, forHTTPHeaderField: "User-Agent")
         request.timeoutInterval = TimeInterval(10 * 1000)
-        return try URLEncoding.default.encode(request, with: parameters)
+        return try URLEncoding.queryString.encode(request, with: finalParams)
     }
 }
 

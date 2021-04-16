@@ -27,7 +27,7 @@ protocol GamesListViewModelInput {
     func didSelectItem(at index: Int)
 }
 
-protocol GamesListViewModelOutout {
+protocol GamesListViewModelOutput {
     var items: Observable<[GameItemViewModel]> { get }
     var loading: Observable<MoviesListViewModelLoading?> { get }
     var query: Observable<String> { get }
@@ -39,7 +39,7 @@ protocol GamesListViewModelOutout {
     var searchBarPlaceholder: String { get }
 }
 
-protocol GamesListViewModel: GamesListViewModelInput, GamesListViewModelOutout {}
+protocol GamesListViewModel: GamesListViewModelInput, GamesListViewModelOutput {}
 
 final class DefaultGamesListViewModel: GamesListViewModel {
     
