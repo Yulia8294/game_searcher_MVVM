@@ -15,7 +15,6 @@ class TestTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     
-    
     func setup(_ trailer: Trailer) -> Self {
         titleLabel.text = trailer.name
         if let url = URL(string: trailer.preview!) {

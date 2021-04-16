@@ -43,7 +43,6 @@ class SearchViewController: UIViewController {
     }
     
     private func showError(_ error: String) {
-        guard !error.isEmpty else { return }
         Log(error)
     }
     
@@ -93,9 +92,9 @@ class SearchViewController: UIViewController {
     }
     
     private func addLazyLoading() {
-        tableView.addInfiniteScrolling {
-            self.tableView.infiniteScrollingView.activityIndicatorViewStyle = .medium
-            self.viewModel.didRequestNextPage()
+        tableView.addInfiniteScrolling { [weak self] in
+            self?.tableView.infiniteScrollingView.activityIndicatorViewStyle = .medium
+            self?.viewModel.didRequestNextPage()
         }
     }
 }
@@ -123,7 +122,7 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.cell(GameCell.self).setupGameInfo(games[indexPath.row])
+        tableView.cell(GameCell.self).setupGameInfo(with: games[indexPath.row])
     }
 }
 
@@ -133,9 +132,9 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let details = GameDetailsController.instantiate("GameDetails")
-//        details.game = games[indexPath.row]
-//        push(details)
+        let details = GameDetailsController.instantiate("GameDetails")
+        details.game = games[indexPath.row]
+        push(details)
     }
 }
 

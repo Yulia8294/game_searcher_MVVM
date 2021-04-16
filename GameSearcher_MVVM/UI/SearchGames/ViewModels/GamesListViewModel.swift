@@ -147,9 +147,7 @@ final class DefaultGamesListViewModel: GamesListViewModel {
             }
             self.appendResults(games)
         }
-        
     }
-    
     
     
     func didSearch(query: String) {

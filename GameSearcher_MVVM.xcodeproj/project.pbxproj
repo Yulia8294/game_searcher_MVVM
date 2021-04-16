@@ -331,6 +331,7 @@
 		A3EDD8382629B1CC002160E2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A3EDD9132629CA8C002160E2 /* Testing */,
 				A3EDD8392629B1CC002160E2 /* SearchGames */,
 				A3EDD8462629B1CC002160E2 /* MyGames */,
 				A3EDD84E2629B1CC002160E2 /* GameDetails */,
@@ -341,14 +342,9 @@
 		A3EDD8392629B1CC002160E2 /* SearchGames */ = {
 			isa = PBXGroup;
 			children = (
+				A3EDD9122629CA7B002160E2 /* Views */,
 				A3EDD83A2629B1CC002160E2 /* ViewModels */,
-				A3EDD83C2629B1CC002160E2 /* SearchViewController.swift */,
-				A3EDD83D2629B1CC002160E2 /* TestTableViewCell.xib */,
-				A3EDD83E2629B1CC002160E2 /* Main.storyboard */,
-				A3EDD8402629B1CC002160E2 /* TestViewController.swift */,
-				A3EDD8412629B1CC002160E2 /* GameItemViewModel.swift */,
 				A3EDD8422629B1CC002160E2 /* GameCell */,
-				A3EDD8452629B1CC002160E2 /* TestTableViewCell.swift */,
 			);
 			path = SearchGames;
 			sourceTree = "<group>";
@@ -356,6 +352,7 @@
 		A3EDD83A2629B1CC002160E2 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A3EDD8412629B1CC002160E2 /* GameItemViewModel.swift */,
 				A3EDD83B2629B1CC002160E2 /* GamesListViewModel.swift */,
 			);
 			path = ViewModels;
@@ -512,6 +509,25 @@
 				A3EDD86D2629B1CC002160E2 /* StoryboardInstantiable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A3EDD9122629CA7B002160E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A3EDD83E2629B1CC002160E2 /* Main.storyboard */,
+				A3EDD83C2629B1CC002160E2 /* SearchViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A3EDD9132629CA8C002160E2 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				A3EDD8452629B1CC002160E2 /* TestTableViewCell.swift */,
+				A3EDD83D2629B1CC002160E2 /* TestTableViewCell.xib */,
+				A3EDD8402629B1CC002160E2 /* TestViewController.swift */,
+			);
+			path = Testing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

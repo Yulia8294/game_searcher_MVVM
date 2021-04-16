@@ -16,12 +16,11 @@ class GameCell: UITableViewCell {
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameGenre: UILabel!
         
-
-    func setupGameInfo(_ game: GameItemViewModel) -> Self {
-        gameTitle.text = game.title
-        gameGenre.text = game.genres.joined(separator: ", ")
+    func setupGameInfo(with viewModel: GameItemViewModel) -> Self {
+        gameTitle.text = viewModel.title
+        gameGenre.text = viewModel.genres.joined(separator: ", ")
         
-        guard let image = game.posterImage else   { return self }
+        guard let image = viewModel.posterImage else   { return self }
         guard let url = URL(string: image) else { return self }
         gameImageView.kf.indicatorType = .activity
         gameImageView.kf.setImage(with: url)

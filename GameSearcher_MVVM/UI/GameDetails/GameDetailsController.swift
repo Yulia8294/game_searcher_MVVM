@@ -48,7 +48,7 @@ class GameDetailsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gameInfoTableView.setup(game)
+        gameInfoTableView.setup(with: GameItemViewModel(game: game))
         Log(game.id)
         setupButtonsState()
         setupGame(game)
@@ -113,7 +113,7 @@ class GameDetailsController: UIViewController {
         APIService.fetchGameDetails(gameId: game.id) { error, game in
             if let game = game {
                 self.game = game
-                self.gameInfoTableView.setup(game)
+                self.gameInfoTableView.setup(with: GameItemViewModel(game: game))
             }
         }
     }

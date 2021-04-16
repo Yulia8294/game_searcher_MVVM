@@ -15,6 +15,7 @@ struct GameItemViewModel {
     let title: String
     let posterImage: String?
     let genres: List<String>
+    let platforms: List<String>
 }
 
 extension GameItemViewModel {
@@ -25,5 +26,6 @@ extension GameItemViewModel {
         self.genres = game.genres
         self.released = game.released
         self.gameInfo = game.gameInfo
+        self.platforms = game.platforms
     }
 }
