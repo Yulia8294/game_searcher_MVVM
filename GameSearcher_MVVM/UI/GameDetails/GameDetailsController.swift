@@ -31,6 +31,14 @@ class GameDetailsController: UIViewController {
     @IBOutlet weak var addToPlayedButton: TwoStateButton!
     @IBOutlet weak var addToListButton: TwoStateButton!
     
+    private var viewModel: GameDetailsViewModel!
+    
+    static func create(with viewModel: GameDetailsViewModel) -> GameDetailsController {
+        let view = GameDetailsController.instantiate()
+        view.viewModel = viewModel
+        return view
+    }
+    
     private var screenshots: [String] = []
     private var storedGame: GameItem? {
         RealmService.shared.object(GameItem.self, key: game.id)
@@ -54,6 +62,10 @@ class GameDetailsController: UIViewController {
         setupGame(game)
         getSimilarGames()
      //   getTrailers()
+    }
+    
+    private func bind(to viewModel: GameDetailsViewModel) {
+        //viewModel.description.observe(on: self) { [weak self] in }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -135,19 +147,11 @@ class GameDetailsController: UIViewController {
 //MARK: - @IBActions
     
     @IBAction func didPressSaveGameButton(_ sender: TwoStateButton) {
-        sender.togle()
-        RealmService.shared.commitWriting {
-            game.isFavourite = sender.isActive
-            RealmService.shared.append(game)
-        }
+        viewModel.addedToFavourites()
     }
     
     @IBAction func didPressAddToPlayedButton(_ sender: TwoStateButton) {
-        sender.togle()
-        RealmService.shared.commitWriting {
-            game.played = sender.isActive
-            RealmService.shared.append(game)
-        }
+        viewModel.addedToPlayed()
     }
 }
 

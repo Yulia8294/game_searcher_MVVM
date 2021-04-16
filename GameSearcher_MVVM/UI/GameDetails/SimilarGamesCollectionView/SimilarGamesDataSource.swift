@@ -25,11 +25,11 @@ class SimilarGamesDataSource: NSObject, UICollectionViewDataSource, UICollection
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.cell(SimilarGamesCell.self, for: indexPath).setupGame(data[indexPath.item])
+        collectionView.cell(SimilarGamesCell.self, for: indexPath).setupGame(data[indexPath.item])
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

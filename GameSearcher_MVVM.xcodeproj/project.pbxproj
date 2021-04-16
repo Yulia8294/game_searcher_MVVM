@@ -81,6 +81,7 @@
 		A3EDD92B2629D9BD002160E2 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD92A2629D9BD002160E2 /* AppDIContainer.swift */; };
 		A3EDD9322629E371002160E2 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD9312629E371002160E2 /* EmptyView.swift */; };
 		A3EDD9372629E3E1002160E2 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3EDD9362629E3E1002160E2 /* EmptyView.xib */; };
+		A3EDD93B2629EBD8002160E2 /* GameDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD93A2629EBD8002160E2 /* GameDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +162,7 @@
 		A3EDD92A2629D9BD002160E2 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		A3EDD9312629E371002160E2 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		A3EDD9362629E3E1002160E2 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		A3EDD93A2629EBD8002160E2 /* GameDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsViewModel.swift; sourceTree = "<group>"; };
 		F3C488939A0664C954BFA214 /* Pods-GameSearcher_MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameSearcher_MVVM.release.xcconfig"; path = "Target Support Files/Pods-GameSearcher_MVVM/Pods-GameSearcher_MVVM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -411,6 +413,7 @@
 		A3EDD84E2629B1CC002160E2 /* GameDetails */ = {
 			isa = PBXGroup;
 			children = (
+				A3EDD9392629EBCC002160E2 /* ViewModel */,
 				A3EDD84F2629B1CC002160E2 /* InfoTableView */,
 				A3EDD8572629B1CC002160E2 /* GameDetailsController.swift */,
 				A3EDD8582629B1CC002160E2 /* GameDetails.storyboard */,
@@ -578,6 +581,14 @@
 				A3EDD9362629E3E1002160E2 /* EmptyView.xib */,
 			);
 			path = EmptyView;
+			sourceTree = "<group>";
+		};
+		A3EDD9392629EBCC002160E2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A3EDD93A2629EBD8002160E2 /* GameDetailsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -749,6 +760,7 @@
 				A3EDD8942629B1CC002160E2 /* TestViewController.swift in Sources */,
 				A3EDD8842629B1CC002160E2 /* HUD.swift in Sources */,
 				A3EDD8AF2629B1CC002160E2 /* Observable.swift in Sources */,
+				A3EDD93B2629EBD8002160E2 /* GameDetailsViewModel.swift in Sources */,
 				A3EDD8872629B1CC002160E2 /* CustomViewPageControl.swift in Sources */,
 				A3EDD88C2629B1CC002160E2 /* ImageLoader.swift in Sources */,
 				A3EDD8712629B1CC002160E2 /* AppDelegate.swift in Sources */,
