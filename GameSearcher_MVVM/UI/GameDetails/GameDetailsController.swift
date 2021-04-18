@@ -18,7 +18,6 @@ import Swiftools
 class GameDetailsController: UIViewController {
     
     @IBOutlet weak var collectionPageControl: PageIndicatorView!
-    @IBOutlet weak var noScreensView: UIImageView!
     @IBOutlet weak var trailersCollectionView: UICollectionView!
     @IBOutlet weak var screenshotsCollectionView: UICollectionView!
     @IBOutlet weak var similarCollectionView: UICollectionView!
@@ -39,7 +38,6 @@ class GameDetailsController: UIViewController {
         return view
     }
     
-    private var screenshots: [String] = []
     private var storedGame: GameItem? {
         RealmService.shared.object(GameItem.self, key: game.id)
     }
@@ -99,11 +97,6 @@ class GameDetailsController: UIViewController {
     private func setupGame(_ game: GameItem) {
         title = game.name
         fetchDetails()
-        if let image = game.mainImage {
-            screenshots.append(image)
-            screenshotsDataSource.set(screenshotsCollectionView, screenshots, collectionPageControl)
-            screenshotsCollectionView.reloadData()
-        }
         fetchScreenshots()
     }
     
@@ -131,14 +124,17 @@ class GameDetailsController: UIViewController {
     }
     
     private func fetchScreenshots() {
-        APIService.getScreenshots(game.slug) { error, screenshots in
+            screenshotsDataSource.set(screenshotsCollectionView, collectionPageControl)
+        
+        if let image = game.mainImage {
+            screenshotsDataSource.screenshots.append(image)
+            screenshotsCollectionView.reloadData()
+        }
+        
+        APIService.getScreenshots(game.slug) { [self] error, screenshots in
             if let screens = screenshots {
-                screens.forEach {
-                    self.screenshots.append($0.image)
-                }
-                self.noScreensView.isHidden = !self.screenshots.isEmpty
-                self.screenshotsDataSource.set(self.screenshotsCollectionView, self.screenshots, self.collectionPageControl)
-                self.screenshotsCollectionView.reloadData()
+                screens.forEach { screenshotsDataSource.screenshots.append($0.image) }
+                screenshotsCollectionView.reloadData()
             }
         }
     }
