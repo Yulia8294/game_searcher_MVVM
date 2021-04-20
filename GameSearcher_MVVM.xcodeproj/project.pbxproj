@@ -8,6 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		3FA573160B3B44CB5C2425BE /* Pods_GameSearcher_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022B11C4F86ECC04EB56A7D1 /* Pods_GameSearcher_MVVM.framework */; };
+		A37A0008262EC25C00E58CB7 /* UIColorTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AFFF3262EC25C00E58CB7 /* UIColorTools.swift */; };
+		A37A0009262EC25C00E58CB7 /* UIScrollViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AFFF4262EC25C00E58CB7 /* UIScrollViewTools.swift */; };
+		A37A000A262EC25C00E58CB7 /* UIViewControllerTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AFFF5262EC25C00E58CB7 /* UIViewControllerTools.swift */; };
+		A37A000B262EC25C00E58CB7 /* UIViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AFFF6262EC25C00E58CB7 /* UIViewTools.swift */; };
+		A37A000C262EC25C00E58CB7 /* UIAlertController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AFFF8262EC25C00E58CB7 /* UIAlertController+TextField.swift */; };
+		A37A000D262EC25C00E58CB7 /* CustomizableSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AFFF9262EC25C00E58CB7 /* CustomizableSlider.swift */; };
+		A37A000E262EC25C00E58CB7 /* DynamicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AFFFA262EC25C00E58CB7 /* DynamicTableView.swift */; };
+		A37A000F262EC25C00E58CB7 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AFFFB262EC25C00E58CB7 /* PlaceholderTextView.swift */; };
+		A37A0010262EC25C00E58CB7 /* GestureRecognizers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AFFFC262EC25C00E58CB7 /* GestureRecognizers.swift */; };
+		A37A0011262EC25C00E58CB7 /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AFFFD262EC25C00E58CB7 /* InsetLabel.swift */; };
+		A37A0012262EC25C00E58CB7 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AFFFE262EC25C00E58CB7 /* BackButton.swift */; };
+		A37A0013262EC25C00E58CB7 /* HighlightTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37AFFFF262EC25C00E58CB7 /* HighlightTapView.swift */; };
+		A37A0014262EC25C00E58CB7 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0000262EC25C00E58CB7 /* LoadingButton.swift */; };
+		A37A0015262EC25C00E58CB7 /* DynamicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0001262EC25C00E58CB7 /* DynamicCollectionView.swift */; };
+		A37A0016262EC25C00E58CB7 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0002262EC25C00E58CB7 /* IBDesignableView.swift */; };
+		A37A0017262EC25C00E58CB7 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0003262EC25C00E58CB7 /* Haptics.swift */; };
+		A37A0018262EC25C00E58CB7 /* UICollectionViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0004262EC25C00E58CB7 /* UICollectionViewTools.swift */; };
+		A37A0019262EC25C00E58CB7 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0005262EC25C00E58CB7 /* UIScreen.swift */; };
+		A37A001A262EC25C00E58CB7 /* UIImageViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0006262EC25C00E58CB7 /* UIImageViewTools.swift */; };
+		A37A001B262EC25C00E58CB7 /* UITableViewTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0007262EC25C00E58CB7 /* UITableViewTools.swift */; };
+		A37A0020262EC60D00E58CB7 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A001F262EC60D00E58CB7 /* Globals.swift */; };
+		A37A0023262EC62B00E58CB7 /* UIWindowTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0022262EC62B00E58CB7 /* UIWindowTools.swift */; };
+		A37A0027262EC6B800E58CB7 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0026262EC6B800E58CB7 /* Observable.swift */; };
+		A37A002B262EC6E100E58CB7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A002A262EC6E100E58CB7 /* LoadingView.swift */; };
 		A3EDD86F2629B1CC002160E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3EDD80B2629B1CC002160E2 /* Assets.xcassets */; };
 		A3EDD8702629B1CC002160E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3EDD80C2629B1CC002160E2 /* LaunchScreen.storyboard */; };
 		A3EDD8712629B1CC002160E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD80E2629B1CC002160E2 /* AppDelegate.swift */; };
@@ -69,10 +93,8 @@
 		A3EDD8AC2629B1CC002160E2 /* ScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD8662629B1CC002160E2 /* ScreenshotCell.swift */; };
 		A3EDD8AD2629B1CC002160E2 /* ScreenshotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3EDD8672629B1CC002160E2 /* ScreenshotCell.xib */; };
 		A3EDD8AE2629B1CC002160E2 /* ScreenshotsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD8682629B1CC002160E2 /* ScreenshotsCollectionViewDataSource.swift */; };
-		A3EDD8AF2629B1CC002160E2 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD86A2629B1CC002160E2 /* Observable.swift */; };
 		A3EDD8B02629B1CC002160E2 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD86C2629B1CC002160E2 /* Alertable.swift */; };
 		A3EDD8B12629B1CC002160E2 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD86D2629B1CC002160E2 /* StoryboardInstantiable.swift */; };
-		A3EDD8B22629B1CC002160E2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD86E2629B1CC002160E2 /* LoadingView.swift */; };
 		A3EDD91E2629D50B002160E2 /* SearchGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD91D2629D50B002160E2 /* SearchGameCoordinator.swift */; };
 		A3EDD9222629D74D002160E2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD9212629D74D002160E2 /* MainCoordinator.swift */; };
 		A3EDD9272629D81D002160E2 /* SearchGameDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD9262629D81D002160E2 /* SearchGameDIContainer.swift */; };
@@ -85,6 +107,30 @@
 /* Begin PBXFileReference section */
 		022B11C4F86ECC04EB56A7D1 /* Pods_GameSearcher_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameSearcher_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA9A545BB342F95402D08C4 /* Pods-GameSearcher_MVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameSearcher_MVVM.debug.xcconfig"; path = "Target Support Files/Pods-GameSearcher_MVVM/Pods-GameSearcher_MVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		A37A0000262EC25C00E58CB7 /* LoadingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		A37A0001262EC25C00E58CB7 /* DynamicCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicCollectionView.swift; sourceTree = "<group>"; };
+		A37A0002262EC25C00E58CB7 /* IBDesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
+		A37A0003262EC25C00E58CB7 /* Haptics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		A37A0004262EC25C00E58CB7 /* UICollectionViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewTools.swift; sourceTree = "<group>"; };
+		A37A0005262EC25C00E58CB7 /* UIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		A37A0006262EC25C00E58CB7 /* UIImageViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewTools.swift; sourceTree = "<group>"; };
+		A37A0007262EC25C00E58CB7 /* UITableViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewTools.swift; sourceTree = "<group>"; };
+		A37A001F262EC60D00E58CB7 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		A37A0022262EC62B00E58CB7 /* UIWindowTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowTools.swift; sourceTree = "<group>"; };
+		A37A0026262EC6B800E58CB7 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		A37A002A262EC6E100E58CB7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A37AFFF3262EC25C00E58CB7 /* UIColorTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTools.swift; sourceTree = "<group>"; };
+		A37AFFF4262EC25C00E58CB7 /* UIScrollViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewTools.swift; sourceTree = "<group>"; };
+		A37AFFF5262EC25C00E58CB7 /* UIViewControllerTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTools.swift; sourceTree = "<group>"; };
+		A37AFFF6262EC25C00E58CB7 /* UIViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewTools.swift; sourceTree = "<group>"; };
+		A37AFFF8262EC25C00E58CB7 /* UIAlertController+TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+TextField.swift"; sourceTree = "<group>"; };
+		A37AFFF9262EC25C00E58CB7 /* CustomizableSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomizableSlider.swift; sourceTree = "<group>"; };
+		A37AFFFA262EC25C00E58CB7 /* DynamicTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTableView.swift; sourceTree = "<group>"; };
+		A37AFFFB262EC25C00E58CB7 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
+		A37AFFFC262EC25C00E58CB7 /* GestureRecognizers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureRecognizers.swift; sourceTree = "<group>"; };
+		A37AFFFD262EC25C00E58CB7 /* InsetLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
+		A37AFFFE262EC25C00E58CB7 /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		A37AFFFF262EC25C00E58CB7 /* HighlightTapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightTapView.swift; sourceTree = "<group>"; };
 		A3EDD7F02629B19F002160E2 /* GameSearcher_MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameSearcher_MVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3EDD8012629B1A0002160E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3EDD80B2629B1CC002160E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,10 +194,8 @@
 		A3EDD8662629B1CC002160E2 /* ScreenshotCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotCell.swift; sourceTree = "<group>"; };
 		A3EDD8672629B1CC002160E2 /* ScreenshotCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScreenshotCell.xib; sourceTree = "<group>"; };
 		A3EDD8682629B1CC002160E2 /* ScreenshotsCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenshotsCollectionViewDataSource.swift; sourceTree = "<group>"; };
-		A3EDD86A2629B1CC002160E2 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		A3EDD86C2629B1CC002160E2 /* Alertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		A3EDD86D2629B1CC002160E2 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
-		A3EDD86E2629B1CC002160E2 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		A3EDD91D2629D50B002160E2 /* SearchGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGameCoordinator.swift; sourceTree = "<group>"; };
 		A3EDD9212629D74D002160E2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A3EDD9262629D81D002160E2 /* SearchGameDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGameDIContainer.swift; sourceTree = "<group>"; };
@@ -191,11 +235,60 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A37A0025262EC6A000E58CB7 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				A37A0022262EC62B00E58CB7 /* UIWindowTools.swift */,
+				A37AFFF3262EC25C00E58CB7 /* UIColorTools.swift */,
+				A37A0004262EC25C00E58CB7 /* UICollectionViewTools.swift */,
+				A37A0005262EC25C00E58CB7 /* UIScreen.swift */,
+				A37A0006262EC25C00E58CB7 /* UIImageViewTools.swift */,
+				A37A0007262EC25C00E58CB7 /* UITableViewTools.swift */,
+				A37AFFF4262EC25C00E58CB7 /* UIScrollViewTools.swift */,
+				A37AFFF5262EC25C00E58CB7 /* UIViewControllerTools.swift */,
+				A37AFFF6262EC25C00E58CB7 /* UIViewTools.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		A37AFF53262EB94C00E58CB7 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				A37AFFF2262EC25C00E58CB7 /* helperkit */,
 			);
 			path = Submodules;
+			sourceTree = "<group>";
+		};
+		A37AFFF2262EC25C00E58CB7 /* helperkit */ = {
+			isa = PBXGroup;
+			children = (
+				A37A0026262EC6B800E58CB7 /* Observable.swift */,
+				A37A0025262EC6A000E58CB7 /* UIKit */,
+				A37AFFF7262EC25C00E58CB7 /* UIComponents */,
+				A37A0003262EC25C00E58CB7 /* Haptics.swift */,
+				A37A001F262EC60D00E58CB7 /* Globals.swift */,
+			);
+			name = helperkit;
+			path = helperkit/helperkit;
+			sourceTree = SOURCE_ROOT;
+		};
+		A37AFFF7262EC25C00E58CB7 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A37A002A262EC6E100E58CB7 /* LoadingView.swift */,
+				A37AFFF8262EC25C00E58CB7 /* UIAlertController+TextField.swift */,
+				A37AFFF9262EC25C00E58CB7 /* CustomizableSlider.swift */,
+				A37AFFFA262EC25C00E58CB7 /* DynamicTableView.swift */,
+				A37AFFFB262EC25C00E58CB7 /* PlaceholderTextView.swift */,
+				A37AFFFC262EC25C00E58CB7 /* GestureRecognizers.swift */,
+				A37AFFFD262EC25C00E58CB7 /* InsetLabel.swift */,
+				A37AFFFE262EC25C00E58CB7 /* BackButton.swift */,
+				A37AFFFF262EC25C00E58CB7 /* HighlightTapView.swift */,
+				A37A0000262EC25C00E58CB7 /* LoadingButton.swift */,
+				A37A0001262EC25C00E58CB7 /* DynamicCollectionView.swift */,
+				A37A0002262EC25C00E58CB7 /* IBDesignableView.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		A3EDD7E72629B19F002160E2 = {
@@ -513,9 +606,7 @@
 			isa = PBXGroup;
 			children = (
 				A3EDD8242629B1CC002160E2 /* CustomComponents */,
-				A3EDD86A2629B1CC002160E2 /* Observable.swift */,
 				A3EDD86B2629B1CC002160E2 /* Protocols */,
-				A3EDD86E2629B1CC002160E2 /* LoadingView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -728,18 +819,26 @@
 				A3EDD88A2629B1CC002160E2 /* ResultStructs.swift in Sources */,
 				A3EDD8992629B1CC002160E2 /* MyGamesController.swift in Sources */,
 				A3EDD89B2629B1CC002160E2 /* SortedGamesCollectionViewLayout.swift in Sources */,
+				A37A001A262EC25C00E58CB7 /* UIImageViewTools.swift in Sources */,
 				A3EDD8962629B1CC002160E2 /* GameCell.swift in Sources */,
-				A3EDD8B22629B1CC002160E2 /* LoadingView.swift in Sources */,
+				A37A0012262EC25C00E58CB7 /* BackButton.swift in Sources */,
+				A37A0008262EC25C00E58CB7 /* UIColorTools.swift in Sources */,
 				A3EDD8A22629B1CC002160E2 /* InfoCell.swift in Sources */,
 				A3EDD89E2629B1CC002160E2 /* InfoTableView.swift in Sources */,
+				A37A0018262EC25C00E58CB7 /* UICollectionViewTools.swift in Sources */,
+				A37A0013262EC25C00E58CB7 /* HighlightTapView.swift in Sources */,
+				A37A000D262EC25C00E58CB7 /* CustomizableSlider.swift in Sources */,
 				A3EDD88B2629B1CC002160E2 /* GameItem.swift in Sources */,
+				A37A0011262EC25C00E58CB7 /* InsetLabel.swift in Sources */,
 				A3EDD8B02629B1CC002160E2 /* Alertable.swift in Sources */,
 				A3EDD8892629B1CC002160E2 /* Screenshot.swift in Sources */,
 				A3EDD89D2629B1CC002160E2 /* HeaderView.swift in Sources */,
 				A3EDD88D2629B1CC002160E2 /* APIService.swift in Sources */,
 				A3EDD9222629D74D002160E2 /* MainCoordinator.swift in Sources */,
+				A37A0019262EC25C00E58CB7 /* UIScreen.swift in Sources */,
 				A3EDD88F2629B1CC002160E2 /* StaticData.swift in Sources */,
 				A3EDD9272629D81D002160E2 /* SearchGameDIContainer.swift in Sources */,
+				A37A0023262EC62B00E58CB7 /* UIWindowTools.swift in Sources */,
 				A3EDD8A32629B1CC002160E2 /* GameDetailsController.swift in Sources */,
 				A3EDD8802629B1CC002160E2 /* TwoStateButton.swift in Sources */,
 				A3EDD8902629B1CC002160E2 /* GamesListViewModel.swift in Sources */,
@@ -748,31 +847,45 @@
 				A3EDD8AC2629B1CC002160E2 /* ScreenshotCell.swift in Sources */,
 				A3EDD8912629B1CC002160E2 /* SearchViewController.swift in Sources */,
 				A3EDD8732629B1CC002160E2 /* SearchGameUseCase.swift in Sources */,
+				A37A0015262EC25C00E58CB7 /* DynamicCollectionView.swift in Sources */,
 				A3EDD8852629B1CC002160E2 /* Utils.swift in Sources */,
 				A3EDD8AA2629B1CC002160E2 /* TrailerCell.swift in Sources */,
+				A37A000E262EC25C00E58CB7 /* DynamicTableView.swift in Sources */,
 				A3EDD8742629B1CC002160E2 /* MoviesQueriesRepository.swift in Sources */,
 				A3EDD8A52629B1CC002160E2 /* SimilarGamesDataSource.swift in Sources */,
 				A3EDD8822629B1CC002160E2 /* VideoPlayerView.swift in Sources */,
 				A3EDD8782629B1CC002160E2 /* RealmService.swift in Sources */,
+				A37A0017262EC25C00E58CB7 /* Haptics.swift in Sources */,
 				A3EDD8762629B1CC002160E2 /* PosterImagesRepository.swift in Sources */,
 				A3EDD8A62629B1CC002160E2 /* SimilarGamesCollectionFlowLayout.swift in Sources */,
 				A3EDD9322629E371002160E2 /* EmptyView.swift in Sources */,
+				A37A001B262EC25C00E58CB7 /* UITableViewTools.swift in Sources */,
 				A3EDD8942629B1CC002160E2 /* TestViewController.swift in Sources */,
 				A3EDD8842629B1CC002160E2 /* HUD.swift in Sources */,
-				A3EDD8AF2629B1CC002160E2 /* Observable.swift in Sources */,
+				A37A000C262EC25C00E58CB7 /* UIAlertController+TextField.swift in Sources */,
+				A37A000F262EC25C00E58CB7 /* PlaceholderTextView.swift in Sources */,
+				A37A0010262EC25C00E58CB7 /* GestureRecognizers.swift in Sources */,
 				A3EDD93B2629EBD8002160E2 /* GameDetailsViewModel.swift in Sources */,
 				A3EDD8872629B1CC002160E2 /* CustomViewPageControl.swift in Sources */,
 				A3EDD88C2629B1CC002160E2 /* ImageLoader.swift in Sources */,
+				A37A000A262EC25C00E58CB7 /* UIViewControllerTools.swift in Sources */,
+				A37A0020262EC60D00E58CB7 /* Globals.swift in Sources */,
 				A3EDD8712629B1CC002160E2 /* AppDelegate.swift in Sources */,
 				A3EDD8722629B1CC002160E2 /* Cancelable.swift in Sources */,
 				A3EDD8AE2629B1CC002160E2 /* ScreenshotsCollectionViewDataSource.swift in Sources */,
 				A3EDD8752629B1CC002160E2 /* GamesRepository.swift in Sources */,
+				A37A0014262EC25C00E58CB7 /* LoadingButton.swift in Sources */,
+				A37A0027262EC6B800E58CB7 /* Observable.swift in Sources */,
 				A3EDD91E2629D50B002160E2 /* SearchGameCoordinator.swift in Sources */,
 				A3EDD8882629B1CC002160E2 /* Trailer.swift in Sources */,
+				A37A000B262EC25C00E58CB7 /* UIViewTools.swift in Sources */,
+				A37A0016262EC25C00E58CB7 /* IBDesignableView.swift in Sources */,
 				A3EDD8A02629B1CC002160E2 /* DescriptionCell.swift in Sources */,
 				A3EDD8B12629B1CC002160E2 /* StoryboardInstantiable.swift in Sources */,
 				A3EDD8812629B1CC002160E2 /* NavigationBarConfigurator.swift in Sources */,
+				A37A002B262EC6E100E58CB7 /* LoadingView.swift in Sources */,
 				A3EDD88E2629B1CC002160E2 /* APIRouter.swift in Sources */,
+				A37A0009262EC25C00E58CB7 /* UIScrollViewTools.swift in Sources */,
 				A3EDD92B2629D9BD002160E2 /* AppDIContainer.swift in Sources */,
 				A3EDD8792629B1CC002160E2 /* Models.xcdatamodeld in Sources */,
 				A3EDD8952629B1CC002160E2 /* GameItemViewModel.swift in Sources */,
