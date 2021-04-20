@@ -10,7 +10,12 @@ import UIKit
 
 class GameTrailersDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    private var trailers: [Trailer] = []
+    var trailers: [Trailer] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     private weak var collectionView: UICollectionView!
       
       func set(_ collectionView: UICollectionView, _ data: [Trailer]) {

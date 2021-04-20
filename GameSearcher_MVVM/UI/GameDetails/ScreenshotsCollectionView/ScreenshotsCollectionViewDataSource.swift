@@ -15,6 +15,7 @@ class ScreenshotsDataSource: NSObject, UICollectionViewDataSource, UICollectionV
         didSet {
             placeholder.isHidden = !screenshots.isEmpty
             pageControl?.numberOfPages = screenshots.count
+            collectionView.reloadData()
         }
     }
     

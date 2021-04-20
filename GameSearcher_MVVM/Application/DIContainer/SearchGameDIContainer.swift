@@ -34,17 +34,22 @@ final class SearchGameDIContainer {
 //MARK: - Game details
     
     func makeGameDetailsDetailsController(game: GameItem) -> GameDetailsController {
-        return GameDetailsController()
+        GameDetailsController.create(with: makeGameDetailsViewModel(game: game),
+                                     gameViewModel: makeGameItemViewModel(game: game))
     }
     
-//    func makeGameDetailsViewModel(game: GameItem) -> GameDetailsViewModel {
-//
-//    }
+    func makeGameDetailsViewModel(game: GameItem) -> GameDetailsViewModel {
+        DefaultGameDetailsViewModel(game: game)
+    }
+    
+    func makeGameItemViewModel(game: GameItem) -> GameItemViewModel {
+        GameItemViewModel(game: game)
+    }
     
 // MARK: - Coordinators
 
     func makeGameSearchCoordinator(navigationController: UINavigationController) -> GameSearchCoordinator {
-        return GameSearchCoordinator(navigationController: navigationController,
+        GameSearchCoordinator(navigationController: navigationController,
                                      dependencies: self)
     }
 }

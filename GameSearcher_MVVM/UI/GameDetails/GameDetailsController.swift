@@ -30,40 +30,46 @@ class GameDetailsController: UIViewController {
     @IBOutlet weak var addToPlayedButton: TwoStateButton!
     @IBOutlet weak var addToListButton: TwoStateButton!
     
-    private var viewModel: GameDetailsViewModel!
+    private var detailsViewModel: GameDetailsViewModel!
     
-    static func create(with viewModel: GameDetailsViewModel) -> GameDetailsController {
-        let view = GameDetailsController.instantiate()
-        view.viewModel = viewModel
+    static func create(with detailsViewModel: GameDetailsViewModel, gameViewModel: GameItemViewModel) -> GameDetailsController {
+        let view = GameDetailsController.instantiate("GameDetails")
+        view.detailsViewModel = detailsViewModel
         return view
     }
     
-    private var storedGame: GameItem? {
-        RealmService.shared.object(GameItem.self, key: game.id)
-    }
-    
-    var game: GameItem! {
-        didSet {
-            if let game = RealmService.shared.object(GameItem.self, key: game.id) {
-                self.game = game
-            }
-        }
-    }
+//    private var storedGame: GameItem? {
+//        RealmService.shared.object(GameItem.self, key: game.id)
+//    }
+//
+//    var game: GameItem! {
+//        didSet {
+//            if let game = RealmService.shared.object(GameItem.self, key: game.id) {
+//                self.game = game
+//            }
+//        }
+//    }
     
 //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gameInfoTableView.setup(with: GameItemViewModel(game: game))
-        Log(game.id)
-        setupButtonsState()
-        setupGame(game)
-        getSimilarGames()
+        gameInfoTableView.setup(with: detailsViewModel.gameViewModel.value)
+     //   trailersDataSource.set(trailersCollectionView, [])
+        screenshotsDataSource.set(screenshotsCollectionView, collectionPageControl)
+        similarGamesDataSource.set(collectionView: similarCollectionView, data: [], presentingVC: self)
+    //    setupButtonsState()
+        setupGame()
+        bind(to: detailsViewModel)
+        detailsViewModel.viewDidLoad()
+      //  getSimilarGames()
      //   getTrailers()
     }
     
     private func bind(to viewModel: GameDetailsViewModel) {
-        //viewModel.description.observe(on: self) { [weak self] in }
+        detailsViewModel.similarGames.observe(on: self) { [weak self] in self?.onSimilarGamesChanged($0) }
+        detailsViewModel.gameViewModel.observe(on: self) { [weak self] in self?.onGameDetailsChanged($0) }
+        detailsViewModel.screenshots.observe(on: self) { [weak self] in self?.onScreenshotsChanged($0) }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,81 +79,67 @@ class GameDetailsController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        handleSaveButtonsState()
+      //  handleSaveButtonsState()
     }
     
 //MARK: - Setup
     
-    private func getTrailers() {
-        APIService.getGameTrailers(game.id) { error, trailers in
-            if let trailers = trailers {
-                self.trailersDataSource.set(self.trailersCollectionView, trailers)
-            }
-        }
+
+    
+    private func setupGame() {
+        title = detailsViewModel.title
+     //   fetchDetails()
+     //   fetchScreenshots()
     }
     
-    private func getSimilarGames() {
-        APIService.getSimilarGames(1, game.id) { error, games in
-            if let games = games {
-                self.similarGamesDataSource.set(collectionView: self.similarCollectionView, data: games, presentingVC: self)
-            }
-        }
-    }
+//    private func setupButtonsState() {
+//        guard let game = storedGame else { return }
+//        addToListButton.isActive = game.isFavourite
+//        addToPlayedButton.isActive = game.played
+//    }
+//
+//    private func handleSaveButtonsState() {
+//        if let game = storedGame {
+//            (!addToListButton.isActive && !addToPlayedButton.isActive) ? RealmService.shared.delete(game) : RealmService.shared.append(game)
+//        }
+//    }
     
-    private func setupGame(_ game: GameItem) {
-        title = game.name
-        fetchDetails()
-        fetchScreenshots()
-    }
+//MARK: - ViewModel input
     
-    private func setupButtonsState() {
-        guard let game = storedGame else { return }
-        addToListButton.isActive = game.isFavourite
-        addToPlayedButton.isActive = game.played
-    }
-    
-    private func handleSaveButtonsState() {
-        if let game = storedGame {
-            (!addToListButton.isActive && !addToPlayedButton.isActive) ? RealmService.shared.delete(game) : RealmService.shared.append(game)
-        }
-    }
-    
-//MARK: - Private methods
-    
-    private func fetchDetails() {
-        APIService.fetchGameDetails(gameId: game.id) { error, game in
-            if let game = game {
-                self.game = game
-                self.gameInfoTableView.setup(with: GameItemViewModel(game: game))
-            }
-        }
-    }
-    
-    private func fetchScreenshots() {
-            screenshotsDataSource.set(screenshotsCollectionView, collectionPageControl)
+    private func onMainImageChanged(_ image: UIImage) {
         
-        if let image = game.mainImage {
-            screenshotsDataSource.screenshots.append(image)
-            screenshotsCollectionView.reloadData()
-        }
-        
-        APIService.getScreenshots(game.slug) { [self] error, screenshots in
-            if let screens = screenshots {
-                screens.forEach { screenshotsDataSource.screenshots.append($0.image) }
-                screenshotsCollectionView.reloadData()
-            }
-        }
     }
     
+    private func onScreenshotsChanged(_ screenshots: [String]) {
+        screenshotsDataSource.screenshots = screenshots
+        
+//        if let image = detailsViewModel.mainImage {
+//            screenshotsDataSource.screenshots.append(image.value)
+//            screenshotsCollectionView.reloadData()
+//        }
+    }
+    
+    private func onGameDetailsChanged(_ game: GameItemViewModel) {
+        gameInfoTableView.setup(with: game)
+    }
+    
+    private func onSimilarGamesChanged(_ games: [GameItem]) {
+        similarGamesDataSource.data = games
+    }
+    
+    private func onTrailersChanged(_ trailers: [Trailer]) {
+        trailersDataSource.trailers = trailers
+    }
+
         
 //MARK: - @IBActions
     
     @IBAction func didPressSaveGameButton(_ sender: TwoStateButton) {
-        viewModel.addedToFavourites()
+        detailsViewModel.addedToFavourites()
     }
     
     @IBAction func didPressAddToPlayedButton(_ sender: TwoStateButton) {
-        viewModel.addedToPlayed()
+        detailsViewModel.addedToPlayed()
     }
 }
 

@@ -51,6 +51,8 @@ final class DefaultGamesListViewModel: GamesListViewModel {
     var hasMorePages: Bool = true
     var nextPage: Int { currentPage + 1 }
     
+    var games: [GameItem] = []
+    
     private var moviesLoadTask: Cancellable? { willSet { moviesLoadTask?.cancel() } }
 
     // MARK: - OUTPUT
@@ -78,6 +80,7 @@ final class DefaultGamesListViewModel: GamesListViewModel {
     private func appendResults(_ results: [GameItem]) {
         currentPage += 1
         items.value += results.map(GameItemViewModel.init)
+        games += results
     }
     
     private func resetPages() {
@@ -108,6 +111,7 @@ final class DefaultGamesListViewModel: GamesListViewModel {
 
             guard let games = games else { return }
             self.items.value = games.map { GameItemViewModel(game: $0)}
+            self.games = games
         }
     }
     
@@ -163,8 +167,10 @@ final class DefaultGamesListViewModel: GamesListViewModel {
         moviesLoadTask?.cancel()
     }
     
+
+    
     func didSelectItem(at index: Int) {
-       // actions?.showGameDetails(pages.games[index])
+        actions?.showGameDetails(games[index])
     }
     
 }

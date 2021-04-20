@@ -10,7 +10,11 @@ import UIKit
 
 class SimilarGamesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate  {
     
-    private var data = [GameItem]()
+    var data = [GameItem]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     private var presentingVC: UIViewController!
     
     private weak var collectionView: UICollectionView!
@@ -34,7 +38,7 @@ class SimilarGamesDataSource: NSObject, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let details = GameDetailsController.instantiate("GameDetails")
-        details.game = data[indexPath.item]
+     //   details.game = data[indexPath.item]
         presentingVC.push(details)
     }
 }
