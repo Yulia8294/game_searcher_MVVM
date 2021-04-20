@@ -32,6 +32,14 @@
 		A37A0023262EC62B00E58CB7 /* UIWindowTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0022262EC62B00E58CB7 /* UIWindowTools.swift */; };
 		A37A0027262EC6B800E58CB7 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0026262EC6B800E58CB7 /* Observable.swift */; };
 		A37A002B262EC6E100E58CB7 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A002A262EC6E100E58CB7 /* LoadingView.swift */; };
+		A37A003B262EC99400E58CB7 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0032262EC99400E58CB7 /* Logger.swift */; };
+		A37A003C262EC99400E58CB7 /* ArrayTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0033262EC99400E58CB7 /* ArrayTools.swift */; };
+		A37A003D262EC99400E58CB7 /* URLTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0034262EC99400E58CB7 /* URLTools.swift */; };
+		A37A003E262EC99400E58CB7 /* StringHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0035262EC99400E58CB7 /* StringHelpers.swift */; };
+		A37A003F262EC99400E58CB7 /* CMTimeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0036262EC99400E58CB7 /* CMTimeTools.swift */; };
+		A37A0040262EC99400E58CB7 /* RandomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0037262EC99400E58CB7 /* RandomDate.swift */; };
+		A37A0041262EC99400E58CB7 /* DataTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0038262EC99400E58CB7 /* DataTools.swift */; };
+		A37A0042262EC99400E58CB7 /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37A0039262EC99400E58CB7 /* DateParser.swift */; };
 		A3EDD86F2629B1CC002160E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3EDD80B2629B1CC002160E2 /* Assets.xcassets */; };
 		A3EDD8702629B1CC002160E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3EDD80C2629B1CC002160E2 /* LaunchScreen.storyboard */; };
 		A3EDD8712629B1CC002160E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD80E2629B1CC002160E2 /* AppDelegate.swift */; };
@@ -119,6 +127,14 @@
 		A37A0022262EC62B00E58CB7 /* UIWindowTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowTools.swift; sourceTree = "<group>"; };
 		A37A0026262EC6B800E58CB7 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		A37A002A262EC6E100E58CB7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A37A0032262EC99400E58CB7 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A37A0033262EC99400E58CB7 /* ArrayTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTools.swift; sourceTree = "<group>"; };
+		A37A0034262EC99400E58CB7 /* URLTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLTools.swift; sourceTree = "<group>"; };
+		A37A0035262EC99400E58CB7 /* StringHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelpers.swift; sourceTree = "<group>"; };
+		A37A0036262EC99400E58CB7 /* CMTimeTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTimeTools.swift; sourceTree = "<group>"; };
+		A37A0037262EC99400E58CB7 /* RandomDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomDate.swift; sourceTree = "<group>"; };
+		A37A0038262EC99400E58CB7 /* DataTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTools.swift; sourceTree = "<group>"; };
+		A37A0039262EC99400E58CB7 /* DateParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
 		A37AFFF3262EC25C00E58CB7 /* UIColorTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTools.swift; sourceTree = "<group>"; };
 		A37AFFF4262EC25C00E58CB7 /* UIScrollViewTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewTools.swift; sourceTree = "<group>"; };
 		A37AFFF5262EC25C00E58CB7 /* UIViewControllerTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTools.swift; sourceTree = "<group>"; };
@@ -251,9 +267,42 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		A37A002E262EC93300E58CB7 /* swiftools */ = {
+			isa = PBXGroup;
+			children = (
+				A37A002F262EC99400E58CB7 /* Sources */,
+			);
+			path = swiftools;
+			sourceTree = "<group>";
+		};
+		A37A002F262EC99400E58CB7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A37A0031262EC99400E58CB7 /* Logger */,
+				A37A0033262EC99400E58CB7 /* ArrayTools.swift */,
+				A37A0034262EC99400E58CB7 /* URLTools.swift */,
+				A37A0035262EC99400E58CB7 /* StringHelpers.swift */,
+				A37A0036262EC99400E58CB7 /* CMTimeTools.swift */,
+				A37A0037262EC99400E58CB7 /* RandomDate.swift */,
+				A37A0038262EC99400E58CB7 /* DataTools.swift */,
+				A37A0039262EC99400E58CB7 /* DateParser.swift */,
+			);
+			name = Sources;
+			path = swiftools/Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		A37A0031262EC99400E58CB7 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				A37A0032262EC99400E58CB7 /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
 		A37AFF53262EB94C00E58CB7 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				A37A002E262EC93300E58CB7 /* swiftools */,
 				A37AFFF2262EC25C00E58CB7 /* helperkit */,
 			);
 			path = Submodules;
@@ -822,11 +871,14 @@
 				A37A001A262EC25C00E58CB7 /* UIImageViewTools.swift in Sources */,
 				A3EDD8962629B1CC002160E2 /* GameCell.swift in Sources */,
 				A37A0012262EC25C00E58CB7 /* BackButton.swift in Sources */,
+				A37A0040262EC99400E58CB7 /* RandomDate.swift in Sources */,
 				A37A0008262EC25C00E58CB7 /* UIColorTools.swift in Sources */,
 				A3EDD8A22629B1CC002160E2 /* InfoCell.swift in Sources */,
 				A3EDD89E2629B1CC002160E2 /* InfoTableView.swift in Sources */,
+				A37A003D262EC99400E58CB7 /* URLTools.swift in Sources */,
 				A37A0018262EC25C00E58CB7 /* UICollectionViewTools.swift in Sources */,
 				A37A0013262EC25C00E58CB7 /* HighlightTapView.swift in Sources */,
+				A37A003F262EC99400E58CB7 /* CMTimeTools.swift in Sources */,
 				A37A000D262EC25C00E58CB7 /* CustomizableSlider.swift in Sources */,
 				A3EDD88B2629B1CC002160E2 /* GameItem.swift in Sources */,
 				A37A0011262EC25C00E58CB7 /* InsetLabel.swift in Sources */,
@@ -835,12 +887,14 @@
 				A3EDD89D2629B1CC002160E2 /* HeaderView.swift in Sources */,
 				A3EDD88D2629B1CC002160E2 /* APIService.swift in Sources */,
 				A3EDD9222629D74D002160E2 /* MainCoordinator.swift in Sources */,
+				A37A003B262EC99400E58CB7 /* Logger.swift in Sources */,
 				A37A0019262EC25C00E58CB7 /* UIScreen.swift in Sources */,
 				A3EDD88F2629B1CC002160E2 /* StaticData.swift in Sources */,
 				A3EDD9272629D81D002160E2 /* SearchGameDIContainer.swift in Sources */,
 				A37A0023262EC62B00E58CB7 /* UIWindowTools.swift in Sources */,
 				A3EDD8A32629B1CC002160E2 /* GameDetailsController.swift in Sources */,
 				A3EDD8802629B1CC002160E2 /* TwoStateButton.swift in Sources */,
+				A37A003C262EC99400E58CB7 /* ArrayTools.swift in Sources */,
 				A3EDD8902629B1CC002160E2 /* GamesListViewModel.swift in Sources */,
 				A3EDD8A72629B1CC002160E2 /* SimilarGamesCell.swift in Sources */,
 				A3EDD8A92629B1CC002160E2 /* GameTrailersDataSource.swift in Sources */,
@@ -869,6 +923,8 @@
 				A3EDD8872629B1CC002160E2 /* CustomViewPageControl.swift in Sources */,
 				A3EDD88C2629B1CC002160E2 /* ImageLoader.swift in Sources */,
 				A37A000A262EC25C00E58CB7 /* UIViewControllerTools.swift in Sources */,
+				A37A0041262EC99400E58CB7 /* DataTools.swift in Sources */,
+				A37A0042262EC99400E58CB7 /* DateParser.swift in Sources */,
 				A37A0020262EC60D00E58CB7 /* Globals.swift in Sources */,
 				A3EDD8712629B1CC002160E2 /* AppDelegate.swift in Sources */,
 				A3EDD8722629B1CC002160E2 /* Cancelable.swift in Sources */,
@@ -887,6 +943,7 @@
 				A3EDD88E2629B1CC002160E2 /* APIRouter.swift in Sources */,
 				A37A0009262EC25C00E58CB7 /* UIScrollViewTools.swift in Sources */,
 				A3EDD92B2629D9BD002160E2 /* AppDIContainer.swift in Sources */,
+				A37A003E262EC99400E58CB7 /* StringHelpers.swift in Sources */,
 				A3EDD8792629B1CC002160E2 /* Models.xcdatamodeld in Sources */,
 				A3EDD8952629B1CC002160E2 /* GameItemViewModel.swift in Sources */,
 				A3EDD8982629B1CC002160E2 /* TestTableViewCell.swift in Sources */,

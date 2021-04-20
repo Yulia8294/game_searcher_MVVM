@@ -1,3 +1,6 @@
 [submodule "helperkit"]
 	path = helperkit
 	url = https://github.com/Yulia8294/helperkit.git
+[submodule "swiftools"]
+	path = swiftools
+	url = https://github.com/Yulia8294/swiftools.git

@@ -10,15 +10,6 @@ import UIKit
 import Kingfisher
 import RealmSwift
 
-//done
-extension String {
-    
-    func strip() -> String {
-        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
-    }
-}
-
-
 extension UIImageView {
     
     func loadImage(_ urlString: String?) {
@@ -39,26 +30,5 @@ func getImageFrom(gradientLayer:CAGradientLayer) -> UIImage? {
      UIGraphicsEndImageContext()
      return gradientImage
 }
-
-
-
-public extension Array where Element : Hashable {
-    var unique: [Element] { return Array(Set(self)) }
-    
-}
-
-public extension Array {
-    var randomElement: Element? {
-        if count == 0 { return nil }
-        return self[Int(arc4random_uniform(UInt32(count)))]
-    }
-}
-
-extension String {
-    var trim: String {
-        return self.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
-}
-
 
 
