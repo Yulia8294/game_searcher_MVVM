@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import Swiftools
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

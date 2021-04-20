@@ -8,7 +8,6 @@
 
 import RealmSwift
 import Foundation
-import Swiftools
 
 class RealmService {
     

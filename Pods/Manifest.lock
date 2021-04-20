@@ -1,19 +1,16 @@
 PODS:
-  - Alamofire (5.1.0)
-  - Kingfisher (5.13.4):
-    - Kingfisher/Core (= 5.13.4)
-  - Kingfisher/Core (5.13.4)
-  - MMPlayerView (6.0.0)
-  - NVActivityIndicatorView (4.8.0):
-    - NVActivityIndicatorView/Presenter (= 4.8.0)
-  - NVActivityIndicatorView/Presenter (4.8.0)
-  - Realm (4.4.1):
-    - Realm/Headers (= 4.4.1)
-  - Realm/Headers (4.4.1)
-  - RealmSwift (4.4.1):
-    - Realm (= 4.4.1)
+  - Alamofire (5.4.2)
+  - Kingfisher (6.2.1)
+  - MMPlayerView (6.0.2)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
+  - Realm (10.7.2):
+    - Realm/Headers (= 10.7.2)
+  - Realm/Headers (10.7.2)
+  - RealmSwift (10.7.2):
+    - Realm (= 10.7.2)
   - SVPullToRefresh (0.4.1)
-  - Swiftools (1.0.2)
 
 DEPENDENCIES:
   - Alamofire
@@ -22,7 +19,6 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - RealmSwift
   - SVPullToRefresh
-  - Swiftools (from `https://github.com/Jiliann143/swiftools.git`)
 
 SPEC REPOS:
   trunk:
@@ -34,25 +30,15 @@ SPEC REPOS:
     - RealmSwift
     - SVPullToRefresh
 
-EXTERNAL SOURCES:
-  Swiftools:
-    :git: https://github.com/Jiliann143/swiftools.git
-
-CHECKOUT OPTIONS:
-  Swiftools:
-    :commit: cd25c8eb5f2f12a0f41df677c82c642d67c5a472
-    :git: https://github.com/Jiliann143/swiftools.git
-
 SPEC CHECKSUMS:
-  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
-  Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
-  MMPlayerView: 563b53392b7b2af32982b6f5a890cafff64ae806
-  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
-  Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
-  RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
+  Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
+  Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
+  MMPlayerView: e28bace82369bcfbfbe29f9dcd30eeb641a46754
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
+  RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
-  Swiftools: 9d569f6c96285d749d39c3968f6e744cf18df738
 
-PODFILE CHECKSUM: 216f120493dd3d53166bfcf1b235767513905cb6
+PODFILE CHECKSUM: 208e7ad8711c5b9c8ee8dc89026305e199d5bd10
 
 COCOAPODS: 1.10.1

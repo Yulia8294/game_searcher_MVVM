@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Swiftools
 
 class TestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     

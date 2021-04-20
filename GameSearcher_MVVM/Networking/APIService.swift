@@ -8,7 +8,6 @@
 
 import Alamofire
 import Foundation
-import Swiftools
 
 class APIService {
     

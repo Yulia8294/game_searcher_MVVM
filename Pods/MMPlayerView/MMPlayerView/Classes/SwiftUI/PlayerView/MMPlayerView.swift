@@ -14,16 +14,22 @@ public struct MMPlayerViewUI: View {
     let progress: AnyView?
     let cover: AnyView?
     public var body: some View {
+        
         return ZStack {
             bridge
-            self.cover?
-                .opacity(self.control.isCoverShow ? 1.0 : 0.0)
-                .animation(.easeOut(duration: control.coverAnimationInterval))
+            Button(action: {
+                self.control.coverViewGestureHandle()
+            }) {
+                self.cover?
+                    .opacity(self.control.isCoverShow ? 1.0 : 0.0)
+                    .animation(.easeOut(duration: control.coverAnimationInterval))
+            }
             self.progress
             self.landscapeView()
         }
+                    
         .environmentObject(control)
-        .gesture(self.coverTapGesture(), including: .all)
+//        .gesture(self.coverTapGesture(), including: .all)
         .modifier(PlayerFramePreference())
         .modifier(FrameModifier<PlayerFramePreference.Key>(rect: $rect))
         .onAppear(perform: {
@@ -40,12 +46,11 @@ public struct MMPlayerViewUI: View {
         }
         return EmptyView()
     }
-    
-    private func coverTapGesture() -> _EndedGesture<TapGesture> {
-        return TapGesture().onEnded { (_) in
-            self.control.coverViewGestureHandle()
-        }
-    }
+//    private func coverTapGesture() -> _EndedGesture<TapGesture> {
+//        return TapGesture().onEnded { (_) in
+//            self.control.coverViewGestureHandle()
+//        }
+//    }
 }
 @available(iOS 13.0.0, *)
 extension MMPlayerViewUI {
@@ -60,7 +65,7 @@ extension MMPlayerViewUI {
     public init<P: View,C: View>(control: MMPlayerControl, progress: P, cover: C) {
         self.init(control: control, pView: AnyView(progress), cView: AnyView(cover))
     }
-    
+
     public init(control: MMPlayerControl) {
         self.init(control: control, pView: AnyView(DefaultIndicator()), cView: nil)
     }
@@ -72,7 +77,7 @@ extension MMPlayerViewUI {
         self.cover = cView
         self.control = control
     }
-    
+
     private func clone() -> some View {
         return MMPlayerViewUI(control: self.control, progress: self.progress, cover: self.cover)
     }

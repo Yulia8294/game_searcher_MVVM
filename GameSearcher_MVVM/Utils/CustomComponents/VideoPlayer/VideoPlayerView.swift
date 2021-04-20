@@ -8,7 +8,6 @@
 
 import UIKit
 import AVKit
-import Swiftools
 
 protocol VideoPlayerViewDelegate: class {
     func videoPlayerDidStartPlaying()

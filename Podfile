@@ -10,7 +10,14 @@ target 'GameSearcher_MVVM' do
   pod 'SVPullToRefresh'
   pod 'RealmSwift'
   pod 'NVActivityIndicatorView'
-  pod 'Swiftools', :git => 'https://github.com/Jiliann143/swiftools.git'
   pod 'MMPlayerView'
 
+end
+
+post_install do |pi|
+    pi.pods_project.targets.each do |t|
+      t.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+      end
+    end
 end

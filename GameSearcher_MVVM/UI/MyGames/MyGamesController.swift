@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import Swiftools
 
 enum PresentationType {
     case all
@@ -19,10 +18,9 @@ class MyGamesViewController: UIViewController {
         
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var games: Results<GameItem> {
-        RealmService.shared.objects(GameItem.self)
-    }
-    private var groupedGames = [[GameItem]]()
+    private var games: [GameItemViewModel] = []
+    
+    private var groupedGames = [[GameItemViewModel]]()
     private var type: PresentationType = .all
     
     override func viewDidLoad() {
@@ -38,7 +36,7 @@ class MyGamesViewController: UIViewController {
     }
     
     private func assembleGroupedGames() {
-        let groupedUsers = Dictionary(grouping: games) { $0.releaseYear }
+        let groupedUsers = Dictionary(grouping: games) { $0.released.anyString }
         let sortedKeys = groupedUsers.keys.sorted { $0 > $1 }
         sortedKeys.forEach { (key) in
             if let values = groupedUsers[key] {
@@ -79,8 +77,7 @@ extension MyGamesViewController: UICollectionViewDataSource {
 extension MyGamesViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        LogInfo(games[indexPath.item].gameInfo)
-        LogInfo(games[indexPath.item].releaseYear)
+       
     }
 }
 
@@ -88,8 +85,8 @@ extension MyGamesViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if type == .all { return UICollectionReusableView() }
-        let firstItemInSectionYear = groupedGames[indexPath.section].first!.releaseYear
-        return collectionView.header(HeaderView.self, for: indexPath).setup(String(firstItemInSectionYear))
+        let firstItemInSectionYear = groupedGames[indexPath.section].first!.released
+        return collectionView.header(HeaderView.self, for: indexPath).setup(String(firstItemInSectionYear.anyString))
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

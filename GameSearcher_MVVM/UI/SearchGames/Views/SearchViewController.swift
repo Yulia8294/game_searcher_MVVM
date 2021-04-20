@@ -8,7 +8,6 @@
 
 import UIKit
 import SVPullToRefresh
-import Swiftools
 
 class SearchViewController: UIViewController {
 

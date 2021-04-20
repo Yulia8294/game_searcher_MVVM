@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Swiftools
 
 @IBDesignable class TwoStateButton: UIButton {
     

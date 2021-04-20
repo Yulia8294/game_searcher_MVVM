@@ -299,6 +299,19 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		A37A0063262EDEB400E58CB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3EDD85F2629B1CC002160E2 /* GameTrailersCollectionView */,
+				A3EDD8642629B1CC002160E2 /* ScreenshotsCollectionView */,
+				A3EDD8592629B1CC002160E2 /* SimilarGamesCollectionView */,
+				A3EDD8582629B1CC002160E2 /* GameDetails.storyboard */,
+				A3EDD8572629B1CC002160E2 /* GameDetailsController.swift */,
+				A3EDD84F2629B1CC002160E2 /* InfoTableView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A37AFF53262EB94C00E58CB7 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,13 +570,8 @@
 		A3EDD84E2629B1CC002160E2 /* GameDetails */ = {
 			isa = PBXGroup;
 			children = (
+				A37A0063262EDEB400E58CB7 /* View */,
 				A3EDD9392629EBCC002160E2 /* ViewModel */,
-				A3EDD84F2629B1CC002160E2 /* InfoTableView */,
-				A3EDD8572629B1CC002160E2 /* GameDetailsController.swift */,
-				A3EDD8582629B1CC002160E2 /* GameDetails.storyboard */,
-				A3EDD8592629B1CC002160E2 /* SimilarGamesCollectionView */,
-				A3EDD85F2629B1CC002160E2 /* GameTrailersCollectionView */,
-				A3EDD8642629B1CC002160E2 /* ScreenshotsCollectionView */,
 			);
 			path = GameDetails;
 			sourceTree = "<group>";
@@ -1093,7 +1101,6 @@
 			baseConfigurationReference = 9FA9A545BB342F95402D08C4 /* Pods-GameSearcher_MVVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4AQK3D98WC;
@@ -1117,7 +1124,6 @@
 			baseConfigurationReference = F3C488939A0664C954BFA214 /* Pods-GameSearcher_MVVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4AQK3D98WC;

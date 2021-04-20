@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Swiftools
 
 enum MoviesListViewModelLoading {
     case fullScreen

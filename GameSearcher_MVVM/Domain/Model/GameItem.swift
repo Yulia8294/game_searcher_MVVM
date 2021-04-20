@@ -68,7 +68,7 @@ class GameItem: Object, Decodable {
         super.init()
     }
     
-    required init() {
+    required override init() {
         super.init()
     }
 }
