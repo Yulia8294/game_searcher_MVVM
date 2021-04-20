@@ -19,7 +19,7 @@ protocol GameDetailsViewModelOutput {
     var screenshots: Observable<[String]> { get }
     var similarGames: Observable<[GameItem]> { get }
     var gameViewModel: Observable<GameItemViewModel> { get }
-
+    var trailers: Observable<[Trailer]> { get }
 }
 
 protocol GameDetailsViewModel: GameDetailsViewModelInput, GameDetailsViewModelOutput {}
@@ -32,10 +32,16 @@ final class DefaultGameDetailsViewModel: GameDetailsViewModel {
     var mainImage: Observable<String?> = Observable(nil)
     var screenshots: Observable<[String]> = Observable([])
     var similarGames: Observable<[GameItem]> = Observable([])
-    
+    var trailers: Observable<[Trailer]> = Observable([])
     var gameViewModel: Observable<GameItemViewModel>
 
-    var game: GameItem
+    var game: GameItem {
+        didSet {
+            if let game = RealmService.shared.object(GameItem.self, key: game.id) {
+                self.game = game
+            }
+        }
+    }
     
     init(game: GameItem) {
         self.game = game
@@ -50,7 +56,12 @@ final class DefaultGameDetailsViewModel: GameDetailsViewModel {
 extension DefaultGameDetailsViewModel {
     
     func viewDidLoad() {
+        if let image = mainImage.value {
+            screenshots.value.append(image)
+        }
         fetchDetails()
+        getSimilarGames()
+        fetchScreenshots()
     }
     
     func addedToFavourites() {
@@ -73,21 +84,23 @@ extension DefaultGameDetailsViewModel {
            
         APIService.getScreenshots(game.slug) { [self] error, screenshots in
             if let screens = screenshots {
-                self.screenshots.value = screens.map{$0.image}
+                var screenshots = screens.map { $0.image }
+                screenshots.insertIfNotNil(mainImage.value, at: 0)
+                self.screenshots.value = screenshots
             }
         }
     }
     
     private func getTrailers() {
-//        APIService.getGameTrailers(game.id) { error, trailers in
-//            if let trailers = trailers {
-//                self.trailersDataSource.set(self.trailersCollectionView, trailers)
-//            }
-//        }
+        APIService.getGameTrailers(game.id) { error, trailers in
+            if let trailers = trailers {
+                self.trailers.value = trailers
+            }
+        }
     }
     
     private func getSimilarGames() {
-        APIService.getSimilarGames(1, game.id) { error, games in
+        APIService.getSimilarGames(gameId: game.id) { error, games in
             if let games = games {
                 self.similarGames.value = games
             }
@@ -101,6 +114,14 @@ extension DefaultGameDetailsViewModel {
                 self.gameViewModel.value = GameItemViewModel(game: game)
             }
         }
+    }
+}
+
+extension Array {
+    
+    mutating func insertIfNotNil(_ element: Element?, at index: Int) {
+        guard let element = element else { return }
+        insert(element, at: index)
     }
 }
 

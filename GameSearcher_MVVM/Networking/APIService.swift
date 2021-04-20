@@ -53,7 +53,7 @@ class APIService {
         }
     }
     
-    static func getSimilarGames(_ page: Int, _ gameId: Int, completion: @escaping FetchGamesCompletion) {
+    static func getSimilarGames(_ page: Int = 0, gameId: Int, completion: @escaping FetchGamesCompletion) {
         AF.request(APIRouter.similar(page, gameId)).responseJSON { response in
             handleResponse(response, decode: SearchResults.self) { searchResult, error in
                 guard let results = searchResult else {

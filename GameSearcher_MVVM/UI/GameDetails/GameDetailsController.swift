@@ -42,13 +42,7 @@ class GameDetailsController: UIViewController {
 //        RealmService.shared.object(GameItem.self, key: game.id)
 //    }
 //
-//    var game: GameItem! {
-//        didSet {
-//            if let game = RealmService.shared.object(GameItem.self, key: game.id) {
-//                self.game = game
-//            }
-//        }
-//    }
+
     
 //MARK: - Lifecycle
     
@@ -88,8 +82,6 @@ class GameDetailsController: UIViewController {
     
     private func setupGame() {
         title = detailsViewModel.title
-     //   fetchDetails()
-     //   fetchScreenshots()
     }
     
 //    private func setupButtonsState() {
@@ -106,17 +98,8 @@ class GameDetailsController: UIViewController {
     
 //MARK: - ViewModel input
     
-    private func onMainImageChanged(_ image: UIImage) {
-        
-    }
-    
     private func onScreenshotsChanged(_ screenshots: [String]) {
         screenshotsDataSource.screenshots = screenshots
-        
-//        if let image = detailsViewModel.mainImage {
-//            screenshotsDataSource.screenshots.append(image.value)
-//            screenshotsCollectionView.reloadData()
-//        }
     }
     
     private func onGameDetailsChanged(_ game: GameItemViewModel) {
