@@ -9,7 +9,6 @@
 import UIKit
 import SVPullToRefresh
 import Swiftools
-import HelperKit
 
 class SearchViewController: UIViewController {
 

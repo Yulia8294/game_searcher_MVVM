@@ -1,6 +1,0 @@
-framework module HelperKit {
-  umbrella header "HelperKit-umbrella.h"
-
-  export *
-  module * { export * }
-}

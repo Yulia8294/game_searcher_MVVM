@@ -1,6 +1,5 @@
 PODS:
   - Alamofire (5.1.0)
-  - HelperKit (1.0.5)
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
   - Kingfisher/Core (5.13.4)
@@ -18,7 +17,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - HelperKit (from `https://github.com/Jiliann143/helperkit.git`)
   - Kingfisher
   - MMPlayerView
   - NVActivityIndicatorView
@@ -37,22 +35,16 @@ SPEC REPOS:
     - SVPullToRefresh
 
 EXTERNAL SOURCES:
-  HelperKit:
-    :git: https://github.com/Jiliann143/helperkit.git
   Swiftools:
     :git: https://github.com/Jiliann143/swiftools.git
 
 CHECKOUT OPTIONS:
-  HelperKit:
-    :commit: a329139ade4dba4664cb1db8b60e3f41d798face
-    :git: https://github.com/Jiliann143/helperkit.git
   Swiftools:
     :commit: cd25c8eb5f2f12a0f41df677c82c642d67c5a472
     :git: https://github.com/Jiliann143/swiftools.git
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
-  HelperKit: 85303609f502acea86cd82c796959a2d0fa3f681
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
   MMPlayerView: 563b53392b7b2af32982b6f5a890cafff64ae806
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
@@ -61,6 +53,6 @@ SPEC CHECKSUMS:
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   Swiftools: 9d569f6c96285d749d39c3968f6e744cf18df738
 
-PODFILE CHECKSUM: 1b6020229106ce8143df709d6bd16d04a0b304b8
+PODFILE CHECKSUM: 216f120493dd3d53166bfcf1b235767513905cb6
 
 COCOAPODS: 1.10.1

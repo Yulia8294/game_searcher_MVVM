@@ -8,7 +8,6 @@
 
 import UIKit
 import Swiftools
-import HelperKit
 
 enum GameInfo: String, CaseIterable {
     case genre       = "Genre"

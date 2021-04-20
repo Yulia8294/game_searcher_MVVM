@@ -12,7 +12,6 @@ import Alamofire
 import RealmSwift
 import AVFoundation
 import AVKit
-import HelperKit
 import Swiftools
 
 class GameDetailsController: UIViewController {

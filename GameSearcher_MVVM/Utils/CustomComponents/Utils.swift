@@ -97,15 +97,6 @@ extension UIColor {
     }
 }
 
-extension UITableView {
-    
-    func updateHeight() {
-           DispatchQueue.main.async {
-               self.beginUpdates()
-               self.endUpdates()
-           }
-       }
-}
 
 public extension Array where Element : Hashable {
     var unique: [Element] { return Array(Set(self)) }
