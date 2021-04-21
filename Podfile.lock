@@ -2,9 +2,6 @@ PODS:
   - Alamofire (5.4.2)
   - Kingfisher (6.2.1)
   - MMPlayerView (6.0.2)
-  - NVActivityIndicatorView (5.1.1):
-    - NVActivityIndicatorView/Base (= 5.1.1)
-  - NVActivityIndicatorView/Base (5.1.1)
   - Realm (10.7.2):
     - Realm/Headers (= 10.7.2)
   - Realm/Headers (10.7.2)
@@ -16,7 +13,6 @@ DEPENDENCIES:
   - Alamofire
   - Kingfisher
   - MMPlayerView
-  - NVActivityIndicatorView
   - RealmSwift
   - SVPullToRefresh
 
@@ -25,7 +21,6 @@ SPEC REPOS:
     - Alamofire
     - Kingfisher
     - MMPlayerView
-    - NVActivityIndicatorView
     - Realm
     - RealmSwift
     - SVPullToRefresh
@@ -34,11 +29,10 @@ SPEC CHECKSUMS:
   Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
   Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
   MMPlayerView: e28bace82369bcfbfbe29f9dcd30eeb641a46754
-  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   Realm: e523da9ade306c5ae87e85dc09fdef148d3e1cc1
   RealmSwift: 4f6758c3adbdcc87f7b7777107226532a077f61c
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-PODFILE CHECKSUM: 208e7ad8711c5b9c8ee8dc89026305e199d5bd10
+PODFILE CHECKSUM: d50f371ccd0ca6459c758c8dd079e92c05b6eb96
 
 COCOAPODS: 1.10.1

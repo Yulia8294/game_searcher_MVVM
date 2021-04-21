@@ -59,7 +59,6 @@
 		A3EDD8802629B1CC002160E2 /* TwoStateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD8252629B1CC002160E2 /* TwoStateButton.swift */; };
 		A3EDD8812629B1CC002160E2 /* NavigationBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD8262629B1CC002160E2 /* NavigationBarConfigurator.swift */; };
 		A3EDD8822629B1CC002160E2 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD8282629B1CC002160E2 /* VideoPlayerView.swift */; };
-		A3EDD8842629B1CC002160E2 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD82A2629B1CC002160E2 /* HUD.swift */; };
 		A3EDD8852629B1CC002160E2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD82B2629B1CC002160E2 /* Utils.swift */; };
 		A3EDD8872629B1CC002160E2 /* CustomViewPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD82D2629B1CC002160E2 /* CustomViewPageControl.swift */; };
 		A3EDD8882629B1CC002160E2 /* Trailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EDD82F2629B1CC002160E2 /* Trailer.swift */; };
@@ -168,7 +167,6 @@
 		A3EDD8252629B1CC002160E2 /* TwoStateButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoStateButton.swift; sourceTree = "<group>"; };
 		A3EDD8262629B1CC002160E2 /* NavigationBarConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarConfigurator.swift; sourceTree = "<group>"; };
 		A3EDD8282629B1CC002160E2 /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
-		A3EDD82A2629B1CC002160E2 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		A3EDD82B2629B1CC002160E2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A3EDD82D2629B1CC002160E2 /* CustomViewPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewPageControl.swift; sourceTree = "<group>"; };
 		A3EDD82F2629B1CC002160E2 /* Trailer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trailer.swift; sourceTree = "<group>"; };
@@ -464,7 +462,6 @@
 				A3EDD8252629B1CC002160E2 /* TwoStateButton.swift */,
 				A3EDD8262629B1CC002160E2 /* NavigationBarConfigurator.swift */,
 				A3EDD8272629B1CC002160E2 /* VideoPlayer */,
-				A3EDD82A2629B1CC002160E2 /* HUD.swift */,
 				A3EDD82B2629B1CC002160E2 /* Utils.swift */,
 				A3EDD82D2629B1CC002160E2 /* CustomViewPageControl.swift */,
 			);
@@ -923,7 +920,6 @@
 				A3EDD9322629E371002160E2 /* EmptyView.swift in Sources */,
 				A37A001B262EC25C00E58CB7 /* UITableViewTools.swift in Sources */,
 				A3EDD8942629B1CC002160E2 /* TestViewController.swift in Sources */,
-				A3EDD8842629B1CC002160E2 /* HUD.swift in Sources */,
 				A37A000C262EC25C00E58CB7 /* UIAlertController+TextField.swift in Sources */,
 				A37A000F262EC25C00E58CB7 /* PlaceholderTextView.swift in Sources */,
 				A37A0010262EC25C00E58CB7 /* GestureRecognizers.swift in Sources */,

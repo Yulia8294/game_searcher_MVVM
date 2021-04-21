@@ -9,7 +9,6 @@ target 'GameSearcher_MVVM' do
   pod 'Kingfisher'
   pod 'SVPullToRefresh'
   pod 'RealmSwift'
-  pod 'NVActivityIndicatorView'
   pod 'MMPlayerView'
 
 end
