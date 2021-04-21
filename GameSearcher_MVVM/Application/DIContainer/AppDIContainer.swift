@@ -13,4 +13,5 @@ final class AppDIContainer {
         let dependencies = SearchGameDIContainer.Dependencies(apiDataTransferService: "test", imageDataTransferService: "test")
         return SearchGameDIContainer(dependencies: dependencies)
     }
+    
 }

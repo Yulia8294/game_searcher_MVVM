@@ -23,10 +23,18 @@ class MyGamesViewController: UIViewController {
     private var groupedGames = [[GameItemViewModel]]()
     private var type: PresentationType = .all
     
+    private var viewModel: MyGamesViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         assembleGroupedGames()
         collectionViewSetup()
+    }
+    
+    static func create(with viewModel: MyGamesViewModel) -> MyGamesViewController {
+        let view = MyGamesViewController.instantiate("MyGames")
+        view.viewModel = viewModel
+        return view
     }
     
     private func collectionViewSetup() {

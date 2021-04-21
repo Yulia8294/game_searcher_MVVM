@@ -10,6 +10,7 @@ import UIKit
 protocol GameSearchCoordinatorDependencies  {
     func makeSearchViewController(actions: GamesListViewModelActions) -> SearchViewController
     func makeGameDetailsDetailsController(game: GameItem) -> GameDetailsController
+    func makeMyGamesViewController(actions: MyGamesViewModelActions) -> MyGamesViewController
 }
 
 final class GameSearchCoordinator {
@@ -26,11 +27,18 @@ final class GameSearchCoordinator {
     }
     
     func start() {
-        let actions = GamesListViewModelActions(showGameDetails: showGameDetails)
+        let actions = GamesListViewModelActions(showGameDetails: showGameDetails,
+                                                showMyGames: showMyGames)
         
         let searchVC = dependencies.makeSearchViewController(actions: actions)
         navigationController?.pushViewController(searchVC, animated: true)
         gamesListVC = searchVC
+    }
+    
+    private func showMyGames() {
+        let actions = MyGamesViewModelActions(showGameDetails: showGameDetails)
+        let vc = dependencies.makeMyGamesViewController(actions: actions)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func showGameDetails(game: GameItem) {

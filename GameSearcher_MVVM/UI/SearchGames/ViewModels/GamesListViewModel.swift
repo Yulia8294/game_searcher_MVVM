@@ -14,8 +14,8 @@ enum MoviesListViewModelLoading {
 }
 
 struct GamesListViewModelActions {
-    
     let showGameDetails: (GameItem) -> Void
+    let showMyGames: () -> Void
 }
 
 protocol GamesListViewModelInput {
@@ -24,6 +24,7 @@ protocol GamesListViewModelInput {
     func didSearch(query: String)
     func didCancelSearch()
     func didSelectItem(at index: Int)
+    func didSelectMyGames()
 }
 
 protocol GamesListViewModelOutput {
@@ -46,7 +47,6 @@ final class DefaultGamesListViewModel: GamesListViewModel {
     private var actions: GamesListViewModelActions?
     
     var currentPage: Int = 1
-  //  var totalPageCount: Int = 1
     var hasMorePages: Bool = true
     var nextPage: Int { currentPage + 1 }
     
@@ -63,10 +63,10 @@ final class DefaultGamesListViewModel: GamesListViewModel {
     
     var isEmpty: Bool { return items.value.isEmpty }
     
-    let screenTitle = NSLocalizedString("Game searcher", comment: "")
-    let emptyDataTitle = NSLocalizedString("Search results", comment: "")
-    let errorTitle = NSLocalizedString("Error", comment: "")
-    let searchBarPlaceholder = NSLocalizedString("Search games", comment: "")
+    let screenTitle = "Game searcher"
+    let emptyDataTitle = "Search results"
+    let errorTitle = "Error"
+    let searchBarPlaceholder = "Search games"
     
     // MARK: - Init
     
@@ -156,7 +156,6 @@ final class DefaultGamesListViewModel: GamesListViewModel {
         }
     }
     
-    
     func didSearch(query: String) {
         guard !query.isEmpty else { return }
         update(query: query)
@@ -165,13 +164,14 @@ final class DefaultGamesListViewModel: GamesListViewModel {
     func didCancelSearch() {
         moviesLoadTask?.cancel()
     }
-    
 
-    
     func didSelectItem(at index: Int) {
         actions?.showGameDetails(games[index])
     }
     
+    func didSelectMyGames() {
+        actions?.showMyGames()
+    }
 }
 
 private extension Array where Element == SearchResults {

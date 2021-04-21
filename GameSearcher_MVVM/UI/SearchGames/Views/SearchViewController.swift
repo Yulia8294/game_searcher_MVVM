@@ -86,8 +86,7 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func didPressMyGamesButton(_ sender: UIBarButtonItem) {
-         let details = MyGamesViewController.instantiate("MyGames")
-         push(details)
+        viewModel.didSelectMyGames()
     }
     
     private func addLazyLoading() {

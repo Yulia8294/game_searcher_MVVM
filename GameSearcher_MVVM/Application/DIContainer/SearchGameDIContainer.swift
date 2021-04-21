@@ -46,6 +46,16 @@ final class SearchGameDIContainer {
         GameItemViewModel(game: game)
     }
     
+//MARK: - MyGames
+    
+    func makeMyGamesViewController(actions: MyGamesViewModelActions) -> MyGamesViewController {
+        MyGamesViewController.create(with: makeMyGamesViewModel(actions: actions))
+    }
+    
+    func makeMyGamesViewModel(actions: MyGamesViewModelActions) -> MyGamesViewModel {
+        DefaultMyGamesViewModel(actions: actions)
+    }
+    
 // MARK: - Coordinators
 
     func makeGameSearchCoordinator(navigationController: UINavigationController) -> GameSearchCoordinator {
